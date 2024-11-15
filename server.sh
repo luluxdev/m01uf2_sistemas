@@ -22,7 +22,7 @@ DATA=`nc -l $PORT`
 
 echo "5. COMPROBANDO PREFIJO"
 
-PREFIX= `echo "DATA" | cut -d ' ' -f 1`
+PREFIX=`echo "$DATA" | cut -d ' ' -f 1`
 
 if [ "$PREFIX" != "FILE_NAME" ]
 then
@@ -31,6 +31,6 @@ then
 	exit 2
 fi
 
+echo "6. ENVIANDO OK_FILE_NAME"
+
 echo "OK_FILE_NAME" | nc localhost $PORT
-
-

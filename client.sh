@@ -7,10 +7,11 @@ echo "Cliente de Dragón Magia Abuelita Miedo 2022"
 
 echo "1. ENVÍO DE CABECERA"
 
-echo "DMMM" | nc 127.0.0.1 $PORT
+echo "DMAM" | nc 127.0.0.1 $PORT
 
 DATA=`nc -l $PORT`
 
+echo "3. COMPROBANDO HEADER"
 # SI DATA ES DIFERENTE A OK_HEADER, MENSAJE
 # DE ERROR Y EXIT 1
 if [ "$DATA" != "OK_HEADER" ] 
@@ -21,6 +22,9 @@ fi
 
 echo "4. Enviando el FILE_NAME"
 
+FILE_NAME="dragon.txt"
+
 echo "FILE_NAME $FILE_NAME" | nc localhost $PORT
 
-DATA= `nc -l $PORT`
+echo "7. RECIBIENDO COMPROBACIÓN FILE_NAME"
+DATA=`nc -l $PORT`
