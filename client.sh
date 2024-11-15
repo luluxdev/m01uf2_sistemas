@@ -28,3 +28,13 @@ echo "FILE_NAME $FILE_NAME" | nc localhost $PORT
 
 echo "7. RECIBIENDO COMPROBACIÓN FILE_NAME"
 DATA=`nc -l $PORT`
+
+if [ "$DATA" != "OK_FILE_NAME" ]
+then
+	echo "ERROR 2: el nombre se envió incorrectamente"
+	exit 2
+fi
+
+echo "8. ENVIANDO CONTENIDO"
+
+cat client/$FILE_NAME | nc localhost $PORT
