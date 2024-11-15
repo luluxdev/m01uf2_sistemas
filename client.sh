@@ -1,3 +1,6 @@
+#!/bin/bash
+
+
 PORT="2022"
 
 echo "Cliente de Dragón Magia Abuelita Miedo 2022"
@@ -15,3 +18,9 @@ then
 	echo "ERROR 1: el header se envió incorrectamente"
 	exit 1
 fi
+
+echo "4. Enviando el FILE_NAME"
+
+echo "FILE_NAME $FILE_NAME" | nc localhost $PORT
+
+DATA= `nc -l $PORT`
