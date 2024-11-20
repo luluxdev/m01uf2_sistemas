@@ -9,7 +9,7 @@ echo "0. ESCUCHAMOS"
 DATA=`nc -l $PORT`
 
 if [ "$DATA" != "DMAM" ]
-the
+then
 	echo "ERROR 1: Cabecera incorrecta"
 	echo "KO_HEADER" | nc localhost $PORT
 	exit 1
