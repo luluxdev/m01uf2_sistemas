@@ -24,7 +24,7 @@ DATA=`nc -l $PORT`
 echo "3. COMPROBANDO HEADER"
 if [ "$DATA" != "OK_HEADER" ] 
 then
-    echo "ERROR 1: el header se envió incorrectamente" >&2
+    echo "ERROR 1: el header se envió incorrectamente"
     exit 1
 fi
 
@@ -40,7 +40,7 @@ DATA=`nc -l $PORT`
 
 if [ "$DATA" != "OK_FILE_NAME" ]
 then
-    echo "ERROR 2: el nombre o su hash se enviaron incorrectamente" >&2
+    echo "ERROR 2: el nombre o su hash se enviaron incorrectamente"
     exit 2
 fi
 
@@ -57,7 +57,7 @@ DATA=`nc -l $PORT`
 
 if [ "$DATA" != "OK_FILE_MD5" ]
 then
-    echo "ERROR 3: el contenido o su hash no coincidieron" >&2
+    echo "ERROR 3: el contenido o su hash no coincidieron"
     exit 3
 fi
 
